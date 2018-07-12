@@ -6,6 +6,7 @@ RUN apk --no-cache add build-base tar musl-utils openssl-dev linux-headers opens
     && pip3 install setuptools cx_Freeze==6.0b1 requests-aws4auth boto3 elasticsearch-curator==5.5.4 \
     && apk del gcc python-dev libffi-dev musl-dev linux-headers openssl-dev
 
+ADD resources/ /resources
 USER nobody:nobody
 
 ENTRYPOINT ["/usr/bin/curator"]
